@@ -1,0 +1,29 @@
+#article_form{
+  display: block;
+  padding:20px 40px;
+}
+
+.atr_item{
+  height:32px;
+  padding:4px 20px;
+  line-height: 30px;
+}
+
+label{
+  display: inline-block;
+  width:6em;
+  font-weight: 700;
+}
+
+.input_item{
+  width:40%;
+}
+
+.atr_content{
+  min-height: 400px;
+  padding: 4px 20px;
+}
+
+.article_submit{
+  padding: 4px 20px;
+}

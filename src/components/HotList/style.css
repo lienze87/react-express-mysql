@@ -1,0 +1,13 @@
+#HotList{
+  padding: 20px;
+  list-style: none;
+  line-height: 2em;
+}
+#HotList>li{
+  height:32px;
+  margin-bottom: 5px;
+}
+
+#HotList>li:hover{
+  background:#eee;
+}

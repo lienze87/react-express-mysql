@@ -1,0 +1,14 @@
+.navbar{
+padding:10px 20px;
+}
+
+.navbar>li{
+  height:24px;
+  padding:3px 0;
+  font-size:16px;
+  line-height: 1.5em;
+}
+
+.navbar>li:hover{
+  background:#eee;
+}
