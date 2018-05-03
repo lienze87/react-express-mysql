@@ -28,6 +28,11 @@ app.use(formidable({
   encoding:'utf-8',
   multiples:true
 }));
+app.use((req,res,next)=>{
+  res.header('Access-Control-Allow-Origin', '*')
+  res.header('Access-Control-Allow-Headers', 'Content-Type=application/jsoncharset=UTF-8')
+  console.log(req.originalUrl)
+});
 //引入路由
 app.all('*', router);
 //监听端口

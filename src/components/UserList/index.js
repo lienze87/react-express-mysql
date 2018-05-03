@@ -5,6 +5,9 @@ import Pagination from '../Pagination';
 import { actions } from '../../actions';
 
 class UserList extends React.Component {
+  componentDidMount(){
+    this.props.getUserList(1);
+  }
   render() {
     const data = this.props.UserList;
     return (

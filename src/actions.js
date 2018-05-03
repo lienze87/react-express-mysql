@@ -131,7 +131,14 @@ export const actions = {
       })
     }
   },
-
+  admin_get_category_list:function(page=1){
+    return (dispatch)=>{
+      const url=`/admin/category/${page}`;
+      ajax("GET",url,"",(res,status)=>{
+        dispatch(actions.set_category_list(res))
+      })
+    }
+  },
   set_search_result: function (data) {
     return {
       type: actionType.SET_SEARCH_RESULT,

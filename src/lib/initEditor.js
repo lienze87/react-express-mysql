@@ -3,7 +3,7 @@ import marked from 'marked';
 
 export function initEditor(textareaElement,id){
   const editor = new SimpleMDE({
-    autoDownloadFontAwesome: false,
+    autoDownloadFontAwesome: true,
     element: textareaElement,
     autofocus: true,
     autosave: {

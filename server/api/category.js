@@ -19,6 +19,8 @@ module.exports = {
       //拼接json数据
       let data = {
         count:result.length,
+        pageNum:3,
+        pageNow:page,
         list: Array.from(result) || []
       };
       res.json(data);

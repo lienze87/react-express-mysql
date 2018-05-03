@@ -21,7 +21,7 @@ export default class Admin extends Component {
       <Router>
         <div id="admin">
           <Message />
-          <div id="header" className="card">welcome</div>
+          <div id="header" className="card">welcome your visit!</div>
           <div id="main" className="card">
             <div id="navbar" className="card">
               <Navbar />
@@ -29,9 +29,9 @@ export default class Admin extends Component {
             <div id="content" className="card">
               <Switch>
                 <Route path="/admin" exact component={Welcome} />
+                <Route path='/admin/article/add' exact component={AddArticle} />
                 <Route path='/admin/article' component={AdminArticleList} />
                 <Route path='/admin/p/:pid' component={AdminArticleDetail} />
-                <Route path='/admin/article/add' exact component={AddArticle} />
                 <Route path='/admin/user' component={UserList} />
                 <Route path='/admin/category' component={CategoryList} />
                 <Route path="*" component={NotFound} />

@@ -5,8 +5,6 @@ const userAPI=require('./api/user');
 const categoryAPI=require('./api/category');
 const commentAPI=require('./api/comment');
 
-
-
 router.get('/all/:page',function(req,res){
   articleAPI.get_article_list_all(req,res);
 });

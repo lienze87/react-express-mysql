@@ -5,6 +5,9 @@ import Pagination from '../Pagination';
 import {actions} from '../../actions';
 
 class ArticleList extends React.Component{
+  componentDidMount(){
+    this.props.getArticleList(1);                                         
+  }
   render(){
     const data=this.props.articleList;
     console.log(data);
@@ -19,7 +22,7 @@ class ArticleList extends React.Component{
         />
         <Pagination 
         getList={this.props.getArticleList}
-        type={"admin/article"}
+        type="admin/article"
         pageNow={data.pageNow}
         pageNum={data.pageNum}
         />
@@ -45,8 +48,8 @@ function mapDispatchToProps(dispatch) {
     deleteArticle:(data)=>{
       dispatch(actions.delete_article(data));
     },
-    getArticleList: (category, page) => {
-      dispatch(actions.get_article_list(category, page));
+    getArticleList: ( page) => {
+      dispatch(actions.admin_get_article_list(page));
     }
   }
 }

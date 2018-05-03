@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { BrowserRouter as Router,Switch,Route } from 'react-router-dom';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import './style.css';
 import Message from '../../components/Message';
 import SearchBar from '../../components/SearchBar';
@@ -30,11 +30,11 @@ class Home extends Component {
           <div id="main">
             <Navbar getArticleList={this.props.getArticleList} />
             <div id="content">
-              <Switch>
-                <Route path="/" exact component={ArticleList} />
-                <Route path="/p/:pid"  exact component={ArticleDetail} />
-                <Route path="/:category"  component={ArticleList}/>                 
-                <Route path="/:category/:page"  component={ArticleList} />                
+              <Switch >
+                <Route path="/" exact component={ArticleList}/>
+                <Route path="/p/:pid" exact component={ArticleDetail} />
+                <Route path="/:category" component={ArticleList} />
+                <Route path="/:category/:page" component={ArticleList} />
                 <Route path="*" component={NotFound} />
               </Switch>
             </div>
@@ -55,7 +55,7 @@ class Home extends Component {
 
 function mapStateToProps(state) {
   return {
-    App:state.App
+    App: state.App
   }
 }
 

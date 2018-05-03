@@ -5,6 +5,9 @@ import Pagination from '../Pagination';
 import {actions} from '../../actions';
 
 class CategoryList extends React.Component{
+  componentDidMount(){
+    this.props.getCategoryList(1);
+  }
   render(){
     const data=this.props.categoryList;
     return(
@@ -41,7 +44,7 @@ function mapDispatchToProps(dispatch) {
       dispatch(actions.delete_category(data));
     },
     getCategoryList: (page) => {
-      dispatch(actions.get_category_list( page));
+      dispatch(actions.admin_get_category_list( page));
     }
   }
 }
