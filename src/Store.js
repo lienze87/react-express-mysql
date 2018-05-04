@@ -29,4 +29,4 @@ const storeEnhancers=compose(applyMiddleware(...middlewares));
 
 
 //createStore只能接受一个storeEnhancer
-export default createStore(reducer,{},storeEnhancers);
+export default createStore(reducer,window.initState||{},storeEnhancers);

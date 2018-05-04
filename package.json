@@ -60,8 +60,8 @@
     "start": "node scripts/start.js",
     "build": "node scripts/build.js",
     "test": "node scripts/test.js --env=jsdom",
-    "server-dev": "set NODE_ENV=development&&babel-node server/dev.js ",
-    "server":"set NODE_ENV=production&&babel-node server/index.js "
+    "server-dev": "set NODE_ENV=development&&babel-node server/dev.js --presets es2015,react ",
+    "server": "set NODE_ENV=production&&babel-node server/index.js "
   },
   "devDependencies": {
     "babel-cli": "^6.26.0",

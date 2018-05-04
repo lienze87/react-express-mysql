@@ -1,6 +1,7 @@
 import React from 'react';
 import {connect} from 'react-redux';
 import {Link} from 'react-router-dom';
+import { actions } from '../../actions';
 import './style.css';
 
 class Navbar extends React.Component {
@@ -12,6 +13,9 @@ class Navbar extends React.Component {
     e.preventDefault();
     console.log("get_article_list:" + e.target.dataset.category);
     this.props.getArticleList(e.target.dataset.category,1);
+  }
+  componentDidMount(){
+    this.props.getCategoryList(1);
   }
   render() {
     const data = this.props.categoryList;
@@ -34,7 +38,14 @@ function mapStateToProps(state){
   }
 }
 
-
+function mapDispatchToProps(dispatch) {
+  return {
+    getCategoryList: (page) => {
+      dispatch(actions.get_category_list(page));
+    }
+  }
+}
 export default connect(
-  mapStateToProps
+  mapStateToProps,
+  mapDispatchToProps
 )(Navbar);

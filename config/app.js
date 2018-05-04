@@ -8,6 +8,7 @@ module.exports={
     port:3306
   },
   server:{
+    url:"http://loaclhost:8000",
     host:"localhost",
     port:8000
   },

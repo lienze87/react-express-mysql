@@ -85,11 +85,13 @@ class CommentList extends React.Component {
       editID: 1000
     })
   }
-
+  componentDidMount(){
+    this.props.getCommentList(this.props.article.pid);
+  }
   render() {
     const data = this.props.commentList;
     let list;
-    if(data.list.length!==0){
+    if(data.list!==undefined&&data.list.length>0){
       list = data.list.map((item, index) =>
       index === this.state.editID ?
         <CommentItem
@@ -141,6 +143,9 @@ function mapDispatchToProps(dispatch) {
   return {
     addComment: (data) => {
       dispatch(actions.add_comment(data));
+    },
+    getCommentList: (pid) => {
+      dispatch(actions.get_comment_list(pid));
     }
   }
 }

@@ -1,4 +1,4 @@
-const express = require('express');
+const express=require('express');
 const router = require('./routes');
 const $conf = require('../config/app');
 const bodyParser = require('body-parser');
@@ -19,7 +19,6 @@ app.use( webpackDevMiddleware(compiler, {
 app.use((err,req,res,next)=>{
   const mate=`[${new Date()}] ${req.url}\n`;
   console.log(mate+err.stack+'\n');
-  next();
 })
 //对url进行解码
 app.use(bodyParser.urlencoded({ extended: true }));

@@ -7,9 +7,10 @@ import SearchBar from '../../components/SearchBar';
 import Navbar from '../../components/Navbar';
 import ArticleList from '../../components/ArticleList';
 import ArticleDetail from '../../components/ArticleDetail';
+import NotFound from '../../components/NotFound';
 import Userbar from '../../components/Userbar';
 import HotList from '../../components/HotList';
-import NotFound from '../../components/NotFound';
+
 import { actions } from '../../actions';
 
 class Home extends Component {
@@ -17,8 +18,9 @@ class Home extends Component {
     super(props);
     console.log(this.props.App);
   }
-
   render() {
+    const url=this.props.match;
+    console.log(url);
     return (
       <Router>
         <div id="home">
@@ -30,20 +32,18 @@ class Home extends Component {
           <div id="main">
             <Navbar getArticleList={this.props.getArticleList} />
             <div id="content">
-              <Switch >
-                <Route path="/" exact component={ArticleList}/>
-                <Route path="/p/:pid" exact component={ArticleDetail} />
-                <Route path="/:category" component={ArticleList} />
-                <Route path="/:category/:page" component={ArticleList} />
-                <Route path="*" component={NotFound} />
-              </Switch>
+            <Switch>
+              <Route path={`/`} static exact component={ArticleList}/>
+              <Route path={`/p/:pid`} component={ArticleDetail}/>
+              <Route path={`/:category`} component={ArticleList}/>
+              <Route component={NotFound}/> 
+            </Switch>
             </div>
             <div id="sidebar">
               <Userbar login={this.props.login} />
               <HotList />
             </div>
           </div>
-
           <div id="footer" className="card">
             <span>自豪的使用React!</span>
           </div>

@@ -5,12 +5,12 @@ import ArticleItem  from '../ArticleItem';
 import Pagination  from '../Pagination';
 
 class ArticleList extends React.Component {
+  componentDidMount(){
+    this.props.getArticleList("all",1);
+  }
   render() {
     const data = this.props.articleList;
     console.log(data);
-    if(data.list.length===0){
-      this.props.getArticleList(data.category,1);
-    }
     const list = data.list.map((item, index) =>
       <ArticleItem articleInfo={item} key={index} getArticleDetail={this.props.getArticleDetail} />
     );

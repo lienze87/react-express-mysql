@@ -10,9 +10,7 @@ class ArticleDetail extends React.Component {
     super(props);
     console.log(props);
   }
-  componentDidMount(){
-    this.props.getCommentList(this.props.article.pid);
-  }
+
   render() {
     const info = this.props.article;
     console.log(info);
@@ -53,11 +51,13 @@ function mapStateToProps(state) {
 
 function mapDispatchToProps(dispatch) {
   return {
+    getArticleDetail:(pid)=>{
+      dispatch(actions.get_article_detail(pid));
+    },
     getCommentList: (pid) => {
       dispatch(actions.get_comment_list(pid));
     }
   }
-
 }
 
 export default connect(

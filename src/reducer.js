@@ -4,83 +4,24 @@ const initState = {
   message: "welcome your visit!",
   user: {},
   categoryList: {
-    count: 4,
+    count:1,
     pageNow: 1,
-    pageNum: 2,
-    list: [{
-      id: 1,
-      name: "poetry",
-      count: 4,
-      note: "诗歌"
-    }, {
-      id: 3,
-      name: "poetry",
-      count: 4,
-      note: "诗歌"
-    }, {
-      id: 5,
-      name: "poetry",
-      count: 4,
-      note: "诗歌"
-    }
-    ]
+    pageNum: 1,
+    list: []
   },
   articleList: {
     category: "all",
-    count: 2,
+    count: 1,
     pageNow: 1,
-    pageNum: 3,
+    pageNum: 1,
     list: []
   },
   article: {},
   commentList: {
-    count: 3,
-    pid: 182537,
-    list: [
-      {
-        id: 1,
-        pid: 182537,
-        author: "root",
-        receiver: "theme",
-        date_utc: "2018-09-18T10:20:10",
-        content: "这是一条评论,这条评论会非常的长......这是一条评论,这条评论会非常的长......这是一条评论,这条评论会非常的长......这是一条评论,这条评论会非常的长......这是一条评论,这条评论会非常的长......",
-        parent_id: '',
-      }, {
-        id: 2,
-        pid: 182537,
-        author: "user",
-        receiver: "root",
-        date_utc: "2018-09-18T12:20:10",
-        content: "这是第二条评论",
-        parent_id: 1
-      }, {
-        id: 3,
-        pid: 182537,
-        author: "user1",
-        receiver: "theme",
-        date_utc: "2018-09-18T18:20:10",
-        content: "这是第三条评论",
-        parent_id: ''
-      }
-    ]
+    list:[]
   },
   userList: {
-    cout: 2,
-    pageNow: 1,
-    pageNum: 2,
-    list: [{
-      id: 1,
-      role: "admin",
-      name: "root",
-      nickname: "管理员",
-      email: "12345@qq.com"
-    }, {
-      id: 2,
-      role: "admin",
-      name: "root",
-      nickname: "管理员",
-      email: "12345@qq.com"
-    }]
+    list:[]
   },
   hotList: {
     count: 4,
@@ -115,6 +56,9 @@ export default function Reducer(state = initState, action) {
     }
     case actionType.SET_ARTICLE_DETAIL: {
       return { ...state, article: action.data }
+    }
+    case actionType.SET_COMMENT_LIST:{
+      return {...state,commentList:action.data}
     }
     case actionType.SET_USER_INFO: {
       return { ...state, user: action.data }

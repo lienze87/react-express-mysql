@@ -49,7 +49,7 @@ module.exports = {
         pageNow: page,
         list: Array.from(result)||[]
       };
-      res.json(data);
+     res.json(data);
     });
 
   },

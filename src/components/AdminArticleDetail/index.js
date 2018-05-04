@@ -32,6 +32,9 @@ class ArticleDetail extends React.Component{
     window.localStorage.clear();
     const editor=initEditor(document.getElementById('article_edictor'),'12357');
     this.setState({simplemde:editor});
+    if(this.props.article.pid===undefined){
+      this.props.getArticleDetail(this.props.params.pid);
+    }
   }
   render(){
     const data=this.props.article;
@@ -73,6 +76,9 @@ function mapStateToProps(state) {
 
 function mapDispatchToProps(dispatch) {
   return {
+    getArticleDetail:(pid)=>{
+      dispatch(actions.get_article_detail(pid))
+    },
     updateArticle:(data)=>{
       dispatch(actions.update_article(data))
     }
