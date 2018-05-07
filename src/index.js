@@ -13,7 +13,7 @@ ReactDOM.render(
   <Provider store={store}>
     <Router>
       <Switch>
-        <Route  path="/admin" exact component={Admin}/>  
+        <Route  path="/admin" component={Admin}/>  
         <Route  component={Home}/>
       </Switch>
     </Router>

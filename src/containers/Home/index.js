@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import { Switch, Route } from 'react-router-dom';
 import './style.css';
 import Message from '../../components/Message';
 import SearchBar from '../../components/SearchBar';
@@ -22,11 +22,10 @@ class Home extends Component {
     const url=this.props.match;
     console.log(url);
     return (
-      <Router>
         <div id="home">
           <Message />
           <div id="header" className="card">
-            <span className="logo"></span>
+            <div className="logo">我的博客</div>
             <SearchBar getSearchKey={this.props.getSearchKey} />
           </div>
           <div id="main">
@@ -48,7 +47,6 @@ class Home extends Component {
             <span>自豪的使用React!</span>
           </div>
         </div>
-      </Router>
     )
   }
 }

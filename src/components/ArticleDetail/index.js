@@ -10,7 +10,9 @@ class ArticleDetail extends React.Component {
     super(props);
     console.log(props);
   }
-
+  componentDidMount(){
+    this.props.getCommentList(this.props.article.pid);
+  }
   render() {
     const info = this.props.article;
     console.log(info);

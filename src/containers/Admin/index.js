@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import { Switch, Route } from 'react-router-dom';
 import Navbar from '../../components/AdminNavbar';
 import Welcome from '../../components/Welcome';
 import Message from '../../components/Message';
@@ -20,22 +20,21 @@ export default class Admin extends Component {
     const url=this.props.match.path;
     console.log(url);
     return (
-      <Router>
         <div id="admin">
           <Message />
-          <div id="header" className="card">welcome your visit!</div>
+          <div id="header" className="card"><h1>后台管理系统</h1></div>
           <div id="main" className="card">
             <div id="navbar" className="card">
               <Navbar />
             </div>
             <div id="content" className="card">
               <Switch>
-                <Route path={url} exact component={Welcome} />
-                <Route path={`${url}/article/add`} exact component={AddArticle} />
-                <Route path={`${url}/article`} component={AdminArticleList} />
-                <Route path={`${url}/p/:pid`} component={AdminArticleDetail} />
-                <Route path={`${url}/user`} component={UserList} />
-                <Route path={`${url}/category`} component={CategoryList} />
+                <Route path={`/admin`} exact component={Welcome} />
+                <Route path={`/admin/article/add`} exact component={AddArticle} />
+                <Route path={`/admin/article`} component={AdminArticleList} />
+                <Route path={`/admin/p/:pid`} component={AdminArticleDetail} />
+                <Route path={`/admin/user`} component={UserList} />
+                <Route path={`/admin/category`} component={CategoryList} />
                 <Route component={NotFound} />
               </Switch>
             </div>
@@ -44,7 +43,6 @@ export default class Admin extends Component {
             <span>自豪的使用React!</span>
           </div>
         </div>
-      </Router>
     )
   }
 } 

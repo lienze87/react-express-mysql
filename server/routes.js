@@ -5,6 +5,14 @@ const userAPI=require('./api/user');
 const categoryAPI=require('./api/category');
 const commentAPI=require('./api/comment');
 
+router.get('/', function(req, res,next) {
+  res.json({ message: 'hello! welcome to our api!' });   
+});
+
+router.get('/category/:page',function(req,res){
+  categoryAPI.get_category_list(req,res);
+});
+
 router.get('/all/:page',function(req,res){
   articleAPI.get_article_list_all(req,res);
 });
@@ -69,5 +77,6 @@ router.get('/admin/category/:page',function(req,res){
 router.get('/:category/:page', function (req, res) {
   articleAPI.get_article_list_category(req, res);
 });
+
 
 module.exports = router;

@@ -1,7 +1,6 @@
 const $sql = require('../mapper/Mapper');
 const $conf = require('../../config/app');
 const dao = require('../dao/dao');
-const units = require('../unit/units');
 
 //向前端返回JSON格式的数据
 module.exports = {
@@ -14,8 +13,11 @@ module.exports = {
     const sql = $sql.category.query;
     const key = [start, end];
 
-    dao(sql, key, function (err, result) {
+    dao(sql, key,  (err, result)=>{
+      if(err){
       console.log(err);
+       return res.json({code:1000,message:'发生错误'})
+      }else{
       //拼接json数据
       let data = {
         count:result.length,
@@ -24,6 +26,7 @@ module.exports = {
         list: Array.from(result) || []
       };
       res.json(data);
+      }
     });
   }
 }

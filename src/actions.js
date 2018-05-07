@@ -15,7 +15,11 @@ export const actions = {
     return (dispatch) => {
       const url = `/category/${page}`;
       ajax("GET", url, "", (res, status) => {
-        dispatch(actions.set_category_list(res))
+        if(res.code!==undefined){
+          dispatch(actions.set_message(res.message))
+        }else{
+          dispatch(actions.set_category_list(res))
+        }
       })
     }
   },
@@ -23,7 +27,11 @@ export const actions = {
     return (dispatch) => {
       const url = `/${category}/${page}`;
       function callback(res, status) {
-        dispatch(actions.set_article_list(res));
+        if(res.code!==undefined){
+          dispatch(actions.set_message(res.message))
+        }else{
+          dispatch(actions.set_article_list(res))
+        }
       };
       ajax("GET", url, "", callback);
     }

@@ -85,9 +85,7 @@ class CommentList extends React.Component {
       editID: 1000
     })
   }
-  componentDidMount(){
-    this.props.getCommentList(this.props.article.pid);
-  }
+
   render() {
     const data = this.props.commentList;
     let list;

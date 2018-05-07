@@ -1,6 +1,7 @@
  #Navbar{
    display: block;
    height:32px;
+   padding: 0 10px;
    font-size: 16px;
    line-height: 1.5;
  }

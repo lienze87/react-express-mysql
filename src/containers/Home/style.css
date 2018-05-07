@@ -26,6 +26,16 @@ a {
   padding:5px 10px;
   margin-top:10px;
 }
+#home .logo{
+  display: inline-block;
+  width:60%;
+  height:30px;
+  padding: 3px 10px;
+  font-size: 2em;
+  font-weight: 600;
+  line-height: 30px;
+  vertical-align: middle;
+}
 #home #main{
   width: 100%;
 }

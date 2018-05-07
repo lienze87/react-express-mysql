@@ -19,14 +19,18 @@ module.exports = {
 
     dao(sql, key, function (err, result) {
       console.log(err);
-      //拼接json数据
-      let data = {
-        category: "all",
-        pageNum: 4,
-        pageNow: page,
-        list: Array.from(result)||[]
-      };
-      res.json(data);
+      if(err){
+       return res.json({code:1000,message:'发生错误'})
+      }else{
+          //拼接json数据
+        let data = {
+          category: "all",
+          pageNum: 4,
+          pageNow: page,
+          list: Array.from(result)||[]
+        };
+        res.json(data);
+      }
     });
   },
   get_article_list_category: function (req, res) {
@@ -43,13 +47,17 @@ module.exports = {
 
     dao(sql, key, function (err, result) {
       console.log(err);
-      let data = {
-        category: type,
-        pageNum: 4,
-        pageNow: page,
-        list: Array.from(result)||[]
-      };
-     res.json(data);
+      if(err){
+        return  res.json({code:1001,message:"查询分类列表错误"})
+      }else{
+        let data = {
+          category: type,
+          pageNum: 4,
+          pageNow: page,
+          list: Array.from(result)||[]
+        };
+      res.json(data);
+      }
     });
 
   },
