@@ -49,7 +49,7 @@ module.exports = {
     const key = [start, end];
 
     dao(sql, key, function (err, result) {
-      console.log(err);
+      console.log(err||'no error!');
       //拼接json数据
       let data = {
         pageNum: 2,
@@ -74,7 +74,7 @@ module.exports = {
     const sql = $sql.user.insert;
     const value = Object.keys(user).map((item) => user[item]);
     dao(sql, value, function (err, result) {
-      console.log(err);
+      console.log(err||'no error!');
       res.json({
         code: 1136,
         message: "添加成功"
@@ -90,7 +90,7 @@ module.exports = {
     };
     Object.keys(body).filter(item => item !== `id`).map(item => user[item] = body[item])
     dao(sql, [user, id], function (err, result) {
-      console.log(err);
+      console.log(err||'no error!');
       res.json({
         code: 1128,
         message: "更新成功"
@@ -101,7 +101,7 @@ module.exports = {
     const id = +req.fields.id;
     const sql = $sql.user.delete;
     dao(sql, id, function (err, result) {
-      console.log(err);
+      console.log(err||'no error!');
       res.json({
         code: 1130,
         message: "删除成功"

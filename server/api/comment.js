@@ -21,7 +21,7 @@ module.exports = {
 */
 
     dao(sql, pid, function (err, result) {
-      console.log(err);
+      console.log(err||'no error!');
 /** 
 *      let list = Array.from(result) || [];
 *      //获取重新组装后的列表

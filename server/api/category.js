@@ -13,9 +13,9 @@ module.exports = {
     const sql = $sql.category.query;
     const key = [start, end];
 
-    dao(sql, key,  (err, result)=>{
+    dao(sql, key,function(err, result){
       if(err){
-      console.log(err);
+        console.log(err||'no error!');
        return res.json({code:1000,message:'发生错误'})
       }else{
       //拼接json数据
@@ -26,6 +26,7 @@ module.exports = {
         list: Array.from(result) || []
       };
       res.json(data);
+      console.log(res);
       }
     });
   }

@@ -18,8 +18,8 @@ module.exports = {
     const key = [start, end];
 
     dao(sql, key, function (err, result) {
-      console.log(err);
       if(err){
+        console.log(err);
        return res.json({code:1000,message:'发生错误'})
       }else{
           //拼接json数据
@@ -46,7 +46,7 @@ module.exports = {
     const key = [type, start, end];
 
     dao(sql, key, function (err, result) {
-      console.log(err);
+      console.log(err||'no error!');
       if(err){
         return  res.json({code:1001,message:"查询分类列表错误"})
       }else{
@@ -68,7 +68,7 @@ module.exports = {
     const sql = $sql.article.queryById;
 
     dao(sql, pid, function (err, result) {
-      console.log(err);
+      console.log(err||'no error!');
       res.json(result[0]?result[0]:{code:1005,message:"查询错误"});
     });
   },
@@ -84,7 +84,7 @@ module.exports = {
     const key = [start, end];
 
     dao(sql, key, function (err, result) {
-      console.log(err);
+      console.log(err||'no error!');
       //拼接json数据
       let data = {
         category: "all",
@@ -150,7 +150,7 @@ module.exports = {
     console.log('数据库存储数组对象');
     console.log(value);
     dao(sql,value, function (err, result) {
-      console.log(err);
+      console.log(err||'no error!');
       res.json({
         code: 1026,
         message: "添加成功"
@@ -193,7 +193,7 @@ module.exports = {
     console.log(article);
 
     dao(sql,[article,pid], function (err, result) {
-      console.log(err);
+      console.log(err||'no error!');
       res.json({
         code: 1028,
         message: "更新成功"
@@ -204,7 +204,7 @@ module.exports = {
     const pid = +req.fields.id;
     const sql = $sql.article.delete;
     dao(sql, pid, function (err, result) {
-      console.log(err);
+      console.log(err||'no error!');
       res.json({
         code: 1030,
         message: "删除成功"

@@ -1,12 +1,17 @@
 import React from 'react';
+import {connect} from 'react-redux';
 import './style.css';
+import { actions } from '../../actions';
 
-export default class SearchBar extends React.Component {
+class SearchBar extends React.Component {
   constructor(props) {
     super(props);
     this.handelClick = this.handelClick.bind(this);
   }
 
+  componentDidMount(){
+    this.props.getSearchKey('html');
+  }
   handelClick(e) {
     console.log("get_search_key:"+e.trget.value);
     this.props.getSearchKey(e.trget.value);
@@ -29,3 +34,19 @@ export default class SearchBar extends React.Component {
     )
   }
 }
+
+function mapStateToProps(state) {
+  return { }
+}
+
+function mapDispatchToProps(dispatch) {
+  return {
+    getSearchKey: (key) => {
+      dispatch(actions.get_search_key(key));
+    }
+  }
+}
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(SearchBar);
