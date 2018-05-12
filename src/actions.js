@@ -6,7 +6,7 @@ export const actions = {
     return (dispatch) => {
       const url = `/search/${key}`;
       function callback(res, status) {
-//        dispatch(actions.set_search_result(res));
+//      dispatch(actions.set_search_result(res));
         dispatch(actions.set_message(res.message));
       };
       ajax("GET", url, "", callback);
@@ -14,9 +14,9 @@ export const actions = {
   },
   get_category_list: function (page = 1) {
     return (dispatch) => {
-      const url = `/category/${page}`;
+      const url = `/class/${page}`;
       ajax("GET", url, "", (res, status) => {
-        if(res.code===1000){
+        if(res.code===1000||status===404){
           dispatch(actions.set_message(res.message))
         }else{
           dispatch(actions.set_category_list(res))
@@ -28,7 +28,7 @@ export const actions = {
     return (dispatch) => {
       const url = `/list/${category}/${page}`;
       function callback(res, status) {
-        if(res.code===1000){
+        if(res.code===1000||status===404){
           dispatch(actions.set_message(res.message))
         }else{
           dispatch(actions.set_article_list(res))
@@ -41,7 +41,7 @@ export const actions = {
     return (dispatch) => {
       const url = `/admin/article/${page}`;
       ajax("GET", url, "", (res, status) => {
-        if(res.code===1001){
+        if(res.code===1001||status===404){
           dispatch(actions.set_message(res.message))
         }else{
           dispatch(actions.set_article_list(res))

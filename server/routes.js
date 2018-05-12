@@ -6,10 +6,11 @@ const categoryAPI=require('./api/category');
 const commentAPI=require('./api/comment');
 
 router.get('/search/:key',function(req,res){
+  console.log(res.headersSent);
   res.json({message:'your search no result'});
 })
 
-router.get('/category/:page',function(req,res){
+router.get('/class/:page',function(req,res){
   categoryAPI.get_category_list(req,res);
 });
 

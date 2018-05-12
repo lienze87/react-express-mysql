@@ -1,9 +1,12 @@
 import React from 'react';
+import './style.css';
 
 export default class Welcome extends React.Component{
   render(){
     return (
-      <h2>there is admin page!</h2>
+      <div className="welcome">
+        <h2>暂无消息通知!</h2>
+      </div>
     )
   }
 }

@@ -25,8 +25,8 @@ module.exports = {
         pageNow:page,
         list: Array.from(result) || []
       };
-      res.json(data);
-      console.log(res);
+      console.log(res.headersSent);
+      return res.json(data);
       }
     });
   }
