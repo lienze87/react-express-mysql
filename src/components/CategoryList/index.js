@@ -6,7 +6,9 @@ import {actions} from '../../actions';
 
 class CategoryList extends React.Component{
   componentDidMount(){
-    this.props.getCategoryList(1);
+    if(this.props.categoryList.list.length===0){
+      this.props.getCategoryList(1);
+    }
   }
   render(){
     const data=this.props.categoryList;

@@ -6,11 +6,12 @@ import Pagination  from '../Pagination';
 
 class ArticleList extends React.Component {
   componentDidMount(){
-    this.props.getArticleList("all",1);
+    if(this.props.articleList.list.length===0){
+      this.props.getArticleList("all",1)
+    } 
   }
   render() {
     const data = this.props.articleList;
-    console.log(data);
     const list = data.list.map((item, index) =>
       <ArticleItem articleInfo={item} key={index} getArticleDetail={this.props.getArticleDetail} />
     );

@@ -40,7 +40,7 @@ function mapStateToProps(state) {
 function mapDispatchToProps(dispatch) {
   return {
     getArticleDetail: (pid) => {
-      dispatch(actions.get_article_detail(pid));
+      dispatch(actions.admin_get_article_detail(pid));
     },
     updateArticle:(data)=>{
       dispatch(actions.update_article(data))

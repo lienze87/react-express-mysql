@@ -115,7 +115,7 @@ class CommentList extends React.Component {
   }
     return (
       <div id="comment_list">
-        <p>共有{data.count}条评论</p>
+        <p>共有{data.count||0}条评论</p>
         {list}
         <Editor edit={true}
           pid={data.pid}
@@ -141,9 +141,6 @@ function mapDispatchToProps(dispatch) {
   return {
     addComment: (data) => {
       dispatch(actions.add_comment(data));
-    },
-    getCommentList: (pid) => {
-      dispatch(actions.get_comment_list(pid));
     }
   }
 }

@@ -29,8 +29,7 @@ module.exports = {
           pageNow: page,
           list: Array.from(result)||[]
         };
-        console.log(res.headersSent);
-        return res.json(data);
+        res.json(data);
       }
     });
   },
@@ -47,7 +46,7 @@ module.exports = {
     const key = [type, start, end];
 
     dao(sql, key, function (err, result) {
-      console.log(err||'no error!');
+      console.log(err||'get article list by category no error!');
       if(err){
         return  res.json({code:1001,message:"查询分类列表错误"})
       }else{
@@ -69,7 +68,7 @@ module.exports = {
     const sql = $sql.article.queryById;
 
     dao(sql, pid, function (err, result) {
-      console.log(err||'no error!');
+      console.log(err||'get article deatil no error!');
       res.json(result[0]?result[0]:{code:1005,message:"查询错误"});
     });
   },
@@ -85,7 +84,7 @@ module.exports = {
     const key = [start, end];
 
     dao(sql, key, function (err, result) {
-      console.log(err||'no error!');
+      console.log(err||'get article list in admin no error!');
       //拼接json数据
       let data = {
         category: "all",
@@ -205,7 +204,7 @@ module.exports = {
     const pid = +req.fields.id;
     const sql = $sql.article.delete;
     dao(sql, pid, function (err, result) {
-      console.log(err||'no error!');
+      console.log(err||'delete article no error!');
       res.json({
         code: 1030,
         message: "删除成功"

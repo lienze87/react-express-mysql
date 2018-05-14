@@ -15,8 +15,11 @@ class Navbar extends React.Component {
     this.props.getArticleList(e.target.dataset.category,1);
   }
   componentDidMount(){
-    this.props.getCategoryList(1);
-  }
+      if(this.props.categoryList.list.length===0){
+        this.props.getCategoryList(1);
+      }
+    }
+  
   render() {
     const data = this.props.categoryList;
     const category = data.list.map((item, index) =>

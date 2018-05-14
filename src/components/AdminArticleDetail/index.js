@@ -32,9 +32,9 @@ class ArticleDetail extends React.Component{
     window.localStorage.clear();
     const editor=initEditor(document.getElementById('article_edictor'),'12357');
     this.setState({simplemde:editor});
-    if(this.props.article.pid===undefined){
-      this.props.getArticleDetail(this.props.params.pid);
-    }
+    // if(this.props.article.pid===undefined){
+    //   this.props.getArticleDetail(this.props.params.pid);
+    // }
   }
   render(){
     const data=this.props.article;

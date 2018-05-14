@@ -10,11 +10,7 @@ class ArticleDetail extends React.Component {
     super(props);
     console.log(props);
   }
-  componentDidMount(){
-    if(this.props.article.pid!==undefined){
-      this.props.getCommentList(this.props.article.pid);
-    }
-  }
+
   render() {
     const info = this.props.article;
     console.log(info);
@@ -41,7 +37,7 @@ class ArticleDetail extends React.Component {
             dangerouslySetInnerHTML={{ __html: detail }}>
           </span><br />
         </div>
-        <CommentList />
+        <CommentList/>
       </div>
     )
   }
@@ -56,10 +52,7 @@ function mapStateToProps(state) {
 function mapDispatchToProps(dispatch) {
   return {
     getArticleDetail:(pid)=>{
-      dispatch(actions.get_article_detail(pid));
-    },
-    getCommentList: (pid) => {
-      dispatch(actions.get_comment_list(pid));
+      dispatch(actions.admin_get_article_detail(pid));
     }
   }
 }

@@ -59,6 +59,15 @@ export const actions = {
       ajax("GET", url, "", callback);
     }
   },
+  admin_get_article_detail:function(pid=""){
+    return (dispatch) => {
+      const url = `/admin/p/${pid}`;
+      function callback(res, status) {
+        dispatch(actions.set_article_detail(res));
+      };
+      ajax("GET", url, "", callback);
+    }
+  },
   add_article: function (data) {
     return (dispatch) => {
       const url = `/admin/article/add`;

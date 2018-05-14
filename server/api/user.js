@@ -49,7 +49,7 @@ module.exports = {
     const key = [start, end];
 
     dao(sql, key, function (err, result) {
-      console.log(err||'no error!');
+      console.log(err||'get user list no error!');
       //拼接json数据
       let data = {
         pageNum: 2,
@@ -101,7 +101,7 @@ module.exports = {
     const id = +req.fields.id;
     const sql = $sql.user.delete;
     dao(sql, id, function (err, result) {
-      console.log(err||'no error!');
+      console.log(err||'delete user no error!');
       res.json({
         code: 1130,
         message: "删除成功"

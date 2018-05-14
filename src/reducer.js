@@ -42,8 +42,7 @@ const initState = {
   },
   article: {},
   commentList: {
-    count: 5,
-    pid: 182537,
+    count: 0,
     list: []
   },
   userList: {

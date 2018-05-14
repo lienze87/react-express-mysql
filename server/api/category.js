@@ -14,8 +14,8 @@ module.exports = {
     const key = [start, end];
 
     dao(sql, key,function(err, result){
+      console.log(err||'get category list no error!');
       if(err){
-        console.log(err||'no error!');
        return res.json({code:1000,message:'发生错误'})
       }else{
       //拼接json数据
@@ -25,8 +25,8 @@ module.exports = {
         pageNow:page,
         list: Array.from(result) || []
       };
-      console.log(res.headersSent);
-      return res.json(data);
+      res.json(data);
+      console.log(Date.now());
       }
     });
   }
