@@ -54,9 +54,9 @@ a {
 #home #footer{
   clear: both;
   height:40px;
-  line-height: 40px;
+  padding:10px 5px;
+  line-height: 30px;
   text-align: center;
-  font-size: 24px;
 }
 
 .horizon_list>li{

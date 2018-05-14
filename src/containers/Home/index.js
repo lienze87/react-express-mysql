@@ -44,7 +44,7 @@ class Home extends Component {
             </div>
           </div>
           <div id="footer" className="card">
-            <span>自豪的使用React!</span>
+          <span>©2018 lienze 用户指南 | 用户协议 | 举报不良信息 | 联系我们 </span>
           </div>
         </div>
     )
