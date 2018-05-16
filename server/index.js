@@ -7,7 +7,7 @@ const formidable=require('express-formidable');
 const serverPort=$conf.server.port;
 
 const app =express();
-
+//导入前端静态文件
 app.use('/',express.static(path.join(__dirname,"..",'dist')));
 
 

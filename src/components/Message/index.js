@@ -55,7 +55,6 @@ function mapStateToProps(state){
     message: state.App.message
   }
 }
-
 export default connect(
   mapStateToProps
 )(Message);
