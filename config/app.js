@@ -14,5 +14,4 @@ module.exports={
   },
   pageStep:5,
   cookieName:'azeBlog',
-  
 }
