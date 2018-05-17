@@ -10,8 +10,4 @@
 2. 在cmd中跳转到项目根目录下，运行命令npm install
 3. 以正式环境运行需要运行命令yarn build，然后执行命令yarn server
 4. 以开发环境运行，执行命令yarn server-dev
-<<<<<<< HEAD
 5. 打开Chrome浏览器(本项目尚未完成兼容)，输入http://loaclhost:8000 即可查看项目
-=======
-5. 打开谷歌浏览器，输入http://loaclhost:8000 即可查看项目
->>>>>>> d8a186e3b6acd75e13186821198a101d1f944c55
