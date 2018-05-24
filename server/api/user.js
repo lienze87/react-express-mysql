@@ -74,7 +74,7 @@ module.exports = {
     const sql = $sql.user.insert;
     const value = Object.keys(user).map((item) => user[item]);
     dao(sql, value, function (err, result) {
-      console.log(err||'no error!');
+      console.log(err||' update user no error!');
       res.json({
         code: 1136,
         message: "添加成功"

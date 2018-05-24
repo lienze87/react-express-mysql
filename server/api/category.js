@@ -1,6 +1,7 @@
 const $sql = require('../mapper/Mapper');
 const $conf = require('../../config/app');
 const dao = require('../dao/dao');
+const units = require('../unit/units');
 
 //向前端返回JSON格式的数据
 module.exports = {
@@ -29,5 +30,32 @@ module.exports = {
       console.log(Date.now());
       }
     });
+  },
+  update_category:function(req,res){
+    const body = req.fields;
+    const id = +body.id;
+    const sql = $sql.category.update;
+    const category = {
+      date_modify: units.dateFormat()
+    };
+    Object.keys(body).filter(item => item !== `id`).map(item => category[item] = body[item])
+    dao(sql, [category, id], function (err, result) {
+      console.log(err||'update category no error!');
+      res.json({
+        code: 1228,
+        message: "更新成功"
+      })
+    })
+  },
+  delete_category:function(req,res){
+    const id = +req.fields.id;
+    const sql = $sql.category.delete;
+    dao(sql, id, function (err, result) {
+      console.log(err||'delete category no error!');
+      res.json({
+        code: 1230,
+        message: "删除成功"
+      })
+    })
   }
 }

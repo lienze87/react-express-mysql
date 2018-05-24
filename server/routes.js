@@ -78,4 +78,12 @@ router.get('/admin/category/:page',function(req,res){
   categoryAPI.get_category_list(req,res);
 })
 
+router.get('/admin/category/update',function(req,res){
+  categoryAPI.update_category(req,res);
+})
+
+router.get('/admin/category/delete',function(req,res){
+  categoryAPI.delete_category(req,res);
+})
+
 module.exports = router;

@@ -40,7 +40,7 @@ class Editor extends React.Component {
   handleSubmit() {
     const content = document.querySelector('.comment_editor_textarea').value;
     const formData = new FormData();
-    formData.append('author', 'root');
+    formData.append('author','anonymous');
     formData.append('pid', this.props.pid);
     formData.append('receiver', this.props.receiver);
     formData.append('content', content);

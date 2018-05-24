@@ -161,6 +161,22 @@ export const actions = {
       })
     }
   },
+  update_category: function (data) {
+    return (dispatch) => {
+      const url = `/admin/category/update`;
+      ajax("POST", url, data, (res, status) => {
+        dispatch(actions.set_message(res.message))
+      })
+    }
+  },
+  delete_category: function (data) {
+    return (dispatch) => {
+      const url = `/admin/category/delete`;
+      ajax("POST", url, data, (res, status) => {
+        dispatch(actions.set_message(res.message))
+      })
+    }
+  },
   set_search_result: function (data) {
     return {
       type: actionType.SET_SEARCH_RESULT,
