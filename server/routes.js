@@ -7,7 +7,7 @@ const commentAPI=require('./api/comment');
 
 router.get('/search/:key',function(req,res){
   console.log(res.headersSent);
-  res.json({message:'your search no result'});
+  res.json({message:'your search of'+req.params.key+'no result'});
 })
 
 router.get('/class/:page',function(req,res){

@@ -27,7 +27,13 @@ class HotList extends React.Component{
     </li>
   );
   return (
-    <ul id="HotList" className="card" onClick={this.handleClick}>{hotlist}</ul>  
+    <div id="HotList" className="card">
+      <h2 className="hot_list_title">
+      <span className="line"></span>
+      <span >文章推荐</span>
+      </h2>
+      <ul  className="hot_list" onClick={this.handleClick}>{hotlist}</ul> 
+    </div>
   )
   } 
 }

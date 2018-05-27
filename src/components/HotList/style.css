@@ -3,11 +3,20 @@
   list-style: none;
   line-height: 2em;
 }
-#HotList>li{
+.line{
+  display: block;
+  float: left;
+  width: 5px;
+  height: 28px;
+  background: #0084ff;
+  overflow: hidden;
+  margin-right: 5px;
+}
+.hot_list>li{
   height:32px;
   margin-bottom: 5px;
 }
 
-#HotList>li:hover{
+.hot_list>li:hover{
   background:#eee;
 }

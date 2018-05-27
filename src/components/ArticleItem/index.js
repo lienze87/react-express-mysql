@@ -1,6 +1,7 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
 import './style.css';
+import image from './user_head.jpg';
 
 export default class ArticleItem extends React.Component {
   constructor(props) {
@@ -20,11 +21,14 @@ export default class ArticleItem extends React.Component {
     return (
       <div className="article_item card">
         <div className="author_info">
-          <span>{info.author}</span>
-          <span>&nbsp;于&nbsp;</span>
-          <span>{date.toLocaleString().slice(0,10)}</span>
-          <span>&nbsp;发表在&nbsp;</span>
-          <span>{info.category}</span>
+          <span className="author_info_user_image"><img src={image} alt="头像"/></span>
+          <div className="author_info_content">
+            <span>{info.author}</span>
+            <span>&nbsp;于&nbsp;</span>
+            <span>{date.toLocaleString().slice(0,10)}</span>
+            <span>&nbsp;发表在&nbsp;</span>
+            <span>{info.category}</span>
+          </div>
         </div>
         <div className="article_content">
           <h2 className="content_title">{info.title}</h2>

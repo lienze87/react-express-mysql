@@ -13,8 +13,8 @@ class SearchBar extends React.Component {
 //    this.props.getSearchKey('html');
   }
   handelClick(e) {
-    console.log("get_search_key:"+e.trget.value);
-    this.props.getSearchKey(e.trget.value);
+    console.log("get_search_key:"+document.querySelector('.search_input').value);
+    this.props.getSearchKey(document.querySelector('.search_input').value);
   }
 
   render() {

@@ -13,6 +13,14 @@
 .author_info{
   margin-bottom: 14px;
 }
+.author_info_user_image{
+  display: inline-block;
+  vertical-align: middle;
+}
+.author_info_content{
+  display: inline-block;
+  margin-left: 10px;
+}
 .article_content{
   color:#646464;
 }
