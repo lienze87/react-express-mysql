@@ -7,7 +7,7 @@ export default class Navbar extends React.Component{
     return (
         <ul className="navbar">
           <li>
-            <Link to='/admin'>首页</Link>
+            <Link to='/admin'>访问统计</Link>
           </li>
           <li>
             <Link to='/admin/user'>用户管理</Link>

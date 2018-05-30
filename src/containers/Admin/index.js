@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Switch, Route } from 'react-router-dom';
 import Navbar from '../../components/AdminNavbar';
-import Welcome from '../../components/Welcome';
+import VisitStatistics from '../../components/VisitStatistics';
 import Message from '../../components/Message';
 import AdminArticleList from '../../components/AdminArticleList';
 import AdminArticleDetail from '../../components/AdminArticleDetail';
@@ -29,7 +29,7 @@ export default class Admin extends Component {
             </div>
             <div id="content" className="card">
               <Switch>
-                <Route path={`/admin`} exact component={Welcome} />
+                <Route path={`/admin`} exact component={VisitStatistics} />
                 <Route path={`/admin/article/add`} exact component={AddArticle} />
                 <Route path={`/admin/article`} component={AdminArticleList} />
                 <Route path={`/admin/p/:pid`} component={AdminArticleDetail} />

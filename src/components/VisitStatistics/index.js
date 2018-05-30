@@ -2,7 +2,7 @@ import React from 'react';
 import './style.css';
 import echarts from 'echarts';
 
-export default class Welcome extends React.Component{
+export default class VisitStatistics extends React.Component{
   componentDidMount(){
     const myChart=echarts.init(document.getElementById('admin_home'));
     
