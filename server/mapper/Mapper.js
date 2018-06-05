@@ -13,6 +13,7 @@ module.exports = {
     adminQueryList:`select pid,author,date_utc,title,category,comment_status,comment_count from articles where
                     status='open' order by id DESC limit ?,?`,
     queryHotList:`select pid,author,title from articles where status='open' order by read_count DESC limit 0,5` ,
+    queryCount:`select COUNT(id) from articles where status='open'`,
     updateReadCount:'update articles set read_count=? where pid=?',
     updateCommentCount:'update articles set comment_count=? where pid=?'
   },

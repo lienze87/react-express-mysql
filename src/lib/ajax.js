@@ -5,7 +5,6 @@ export function ajax(method, url, body, next) {
     xhr.onreadystatechange = function () {
       if (xhr.readyState === 4) {
         if (xhr.status === 200) {
-          console.log(xhr.response);
           var data = JSON.parse(xhr.responseText);
           return next(data, xhr.status);
         } else {

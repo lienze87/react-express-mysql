@@ -37,7 +37,7 @@ export const actions = {
       ajax("GET", url, "", callback);
     }
   },
-  admin_get_article_list: function (page = 1) {
+  admin_get_article_list: function (category,page = 1) {
     return (dispatch) => {
       const url = `/admin/article/${page}`;
       ajax("GET", url, "", (res, status) => {
@@ -121,7 +121,7 @@ export const actions = {
       ajax("POST", url, fromdata, callback);
     }
   },
-  get_user_list: function (page = 1) {
+  get_user_list: function (category,page = 1) {
     return (dispatch) => {
       const url = `/admin/user/${page}`;
       ajax("GET", url, "", (res, status) => {
@@ -153,7 +153,7 @@ export const actions = {
       })
     }
   },
-  admin_get_category_list:function(page=1){
+  admin_get_category_list:function(category,page=1){
     return (dispatch)=>{
       const url=`/admin/category/${page}`;
       ajax("GET",url,"",(res,status)=>{

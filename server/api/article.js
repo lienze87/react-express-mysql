@@ -25,7 +25,7 @@ module.exports = {
           //拼接json数据
         let data = {
           category: "all",
-          pageNum: 4,
+          pageNum: 2,
           pageNow: page,
           list: Array.from(result)||[]
         };
@@ -52,7 +52,7 @@ module.exports = {
       }else{
         let data = {
           category: type,
-          pageNum: 4,
+          pageNum: 1,
           pageNow: page,
           list: Array.from(result)||[]
         };
@@ -88,7 +88,7 @@ module.exports = {
       //拼接json数据
       let data = {
         category: "all",
-        pageNum: 3,
+        pageNum: 2,
         pageNow: page,
         list: Array.from(result)||[]
       };

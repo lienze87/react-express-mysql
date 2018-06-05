@@ -52,7 +52,7 @@ module.exports = {
       console.log(err||'get user list no error!');
       //拼接json数据
       let data = {
-        pageNum: 2,
+        pageNum: 1,
         pageNow: page,
         list: Array.from(result) || []
       };

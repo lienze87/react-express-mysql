@@ -12,14 +12,14 @@ class ArticleList extends React.Component {
   }
   render() {
     const data = this.props.articleList;
-    const list = data.list.map((item, index) =>
+    const list =data.list.length?data.list.map((item, index) =>
       <ArticleItem articleInfo={item} key={index} getArticleDetail={this.props.getArticleDetail} />
-    );
+    ):<p className="card">暂无数据</p>;
     return (
       <div id="Article_list">
         {list}
         <Pagination
-          getArticleList={this.props.getArticleList}
+          getList={this.props.getArticleList}
           type={data.category}
           pageNow={data.pageNow}
           pageNum={data.pageNum} />

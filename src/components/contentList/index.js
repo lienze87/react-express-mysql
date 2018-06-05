@@ -120,12 +120,12 @@ export default class ContentList extends React.Component {
       const body = data.list.map((item, index) =>
         index === this.state.editID ?
           <tr key={index} >
-            <td>{index}</td>
+            <td>{(index+1)}</td>
             <Row data={item} edit={true} />
             <EditBar handleCancel={this.handleCancel} />
           </tr> :
           <tr key={index}>
-            <td>{index}</td>
+            <td>{(index+1)}</td>
             <Row data={item} edit={false} />
             <ActionBar
               item={item}

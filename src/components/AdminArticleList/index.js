@@ -10,7 +10,6 @@ class ArticleList extends React.Component{
   }
   render(){
     const data=this.props.articleList;
-    console.log(data);
     return(
       <div id="article_list">
         <ContentList 
@@ -48,8 +47,8 @@ function mapDispatchToProps(dispatch) {
     deleteArticle:(data)=>{
       dispatch(actions.delete_article(data));
     },
-    getArticleList: ( page) => {
-      dispatch(actions.admin_get_article_list(page));
+    getArticleList: (category,page) => {
+      dispatch(actions.admin_get_article_list(category,page));
     }
   }
 }

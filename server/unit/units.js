@@ -17,5 +17,8 @@ module.exports = {
     const dateFormat = Year + "-" + frontZero(Month) + "-" + frontZero(Day) + "T" +
       frontZero(Hours) + ":" + frontZero(Minutes) + ":" + frontZero(Secondes);
     return dateFormat;
+  },
+  getPageNum:function(length,step){
+    return Math.ceil(length/step);
   }
 } 

@@ -56,10 +56,11 @@ export default class Pagination extends React.Component {
   handleClick(e) {
     e.preventDefault();
     if (e.target.dataset.page === undefined) {
+      console.log('page error');
       return;
     } else {
       console.log("get_list:" + this.props.type + "---" + e.target.dataset.page);
-      this.props.getList(e.target.dataset.page);
+      this.props.getList(this.props.type,e.target.dataset.page);
     }
   }
   render() {

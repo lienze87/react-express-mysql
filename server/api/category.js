@@ -22,7 +22,7 @@ module.exports = {
       //拼接json数据
       let data = {
         count:result.length,
-        pageNum:3,
+        pageNum:1,
         pageNow:page,
         list: Array.from(result) || []
       };
