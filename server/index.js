@@ -4,6 +4,7 @@ const router = require('./routes');
 const $conf = require('../config/app');
 const bodyParser = require('body-parser');
 const formidable=require('express-formidable');
+require('events').EventEmitter.prototype._maxListeners = 100;
 const serverPort=$conf.server.port;
 
 const app =express();
@@ -17,7 +18,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(formidable({encoding:'utf-8',multiples:true}));
 
 app.use((req, res, next)=>{  
-  res.setHeader('Access-Control-Allow-Origin', 'http://localhost:8000')
+  res.setHeader('Access-Control-Allow-Origin', 'http://localhost:8000');
   console.log(req.session,req.cookies,req.originalUrl)
   return next();
 });

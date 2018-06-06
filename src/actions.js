@@ -81,7 +81,7 @@ export const actions = {
       const url = `/admin/article/update`;
       ajax("POST", url, data, (res, status) => {
         dispatch(actions.set_message(res.message))
-      })
+      });
     }
   },
   delete_article: function (data) {
@@ -106,6 +106,8 @@ export const actions = {
       ajax("POST", url, data, (data, status) => {
         dispatch(actions.set_message(data.message))
       })
+      //刷新评论列表
+      dispatch(actions.get_comment_list(data.get('pid')));
     }
   },
   login: function (fromdata) {
