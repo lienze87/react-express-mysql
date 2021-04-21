@@ -1,0 +1,28 @@
+{
+    "extends": [ "eslint:recommended", "plugin:react/recommended" ],
+    "env": {
+        "browser": true,
+        "commonjs": true,
+        "node": true,
+        "es6": true
+    },
+    "plugins": [
+        "jest",
+        "no-for-of-loops",
+        "no-function-declare-after-return",
+        "react",
+        "react-internal"
+    ],
+    "parserOptions": {
+        "ecmaVersion": 2018,
+        "sourceType": "module"
+    },
+    "rules": {
+        "no-console": "off",
+        "strict": [
+            "error",
+            "global"
+        ],
+        "curly": "warn"
+    }
+}
