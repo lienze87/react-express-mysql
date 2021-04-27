@@ -8,10 +8,7 @@
     },
     "plugins": [
         "jest",
-        "no-for-of-loops",
-        "no-function-declare-after-return",
-        "react",
-        "react-internal"
+        "react"
     ],
     "parserOptions": {
         "ecmaVersion": 2018,
