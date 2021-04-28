@@ -2,36 +2,18 @@ const express = require("express");
 const router = express.Router();
 const articleAPI = require("./api/article");
 const userAPI = require("./api/user");
-const categoryAPI = require("./api/category");
-const commentAPI = require("./api/comment");
 
 router.get("/search/:key", function (req, res) {
   console.log(res.headersSent);
   res.json({ message: "your search of " + req.params.key + " no result" });
 });
 
-router.get("/class/:page", function (req, res) {
-  categoryAPI.get_category_list(req, res);
-});
-
 router.get("/list/all/:page", function (req, res) {
   articleAPI.get_article_list_all(req, res);
 });
 
-router.get("/list/:category/:page", function (req, res) {
-  articleAPI.get_article_list_category(req, res);
-});
-
 router.get("/p/:pid", function (req, res) {
   articleAPI.get_article_detail(req, res);
-});
-
-router.get("/comment/:pid", function (req, res) {
-  commentAPI.get_comment_list(req, res);
-});
-
-router.post("/comment/add", function (req, res) {
-  commentAPI.add_comment(req, res);
 });
 
 router.post("/login", function (req, res) {
@@ -72,18 +54,6 @@ router.post("/admin/user/update", function (req, res) {
 
 router.post("/admin/user/delete", function (req, res) {
   userAPI.delete_user(req, res);
-});
-
-router.get("/admin/category/:page", function (req, res) {
-  categoryAPI.get_category_list(req, res);
-});
-
-router.get("/admin/category/update", function (req, res) {
-  categoryAPI.update_category(req, res);
-});
-
-router.get("/admin/category/delete", function (req, res) {
-  categoryAPI.delete_category(req, res);
 });
 
 module.exports = router;
